@@ -1,16 +1,28 @@
 #include <iostream>
-#include "player.h"
-
-
 
 using namespace std;
 
-int main()
+class Player {
+    
+    public: 
+    string name; 
+    int health, damage;
+    
+};
+
+int main ()
 {
-    int name;
-    int health = 3;
- 
-    std::cout << "Welcome to the game! Before we begin, what is your name?" << std::endl;
-    std::cin >> name;
-    std::cout << "Welcome " << name << "you have three lives on this journey, use them well." << std::endl;
+    
+    Player Player1;
+    Player1.name;
+    Player1.health = 3;
+    Player1.damage = 0;
+    
+    std::cout << "Welcome to the game! Before we begin, please give me your name." << endl;
+    std::cin >> Player1.name;
+    std::cout << "The game has now begun " << Player1.name << " make each move carefully. You only have three lives.";
+
+
+
+  return 0;
 }
