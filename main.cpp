@@ -9,14 +9,8 @@ class Player {
     int health, damage;
     
     
-    
 };
 
-class Door {
-    
-    public: 
-    int damage;
-};
 
 int main ()
 {
@@ -26,11 +20,8 @@ int main ()
     Player1.health = 3;
     Player1.damage = 0;
     
-    Door Door1;
-    Door Door2;
-    
-    Door2.damage = 1;
-    
+  
+ 
     int choice = 0;
     
     if (Player1.health == 0)
