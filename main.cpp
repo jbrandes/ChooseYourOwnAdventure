@@ -1,57 +1,90 @@
 #include <iostream>
+#include <string>
+
 
 using namespace std;
 
-class Player {
-    
-    public: 
-    string name; 
-    int health, damage;
-    
-    
+
+class Player
+{
+
+public:
+  string name;
+  int damage;
+
 };
 
 
-int main ()
+void rightDoor ()
 {
-    
+
+  std::cout << "You spot an open window. Do you jump to try and escape the fire or find another exit?" << std::endl;
+};
+
+void leftDoor ()
+{
+  string answer;
+  std::cout <<
+    "There is a staircase ahead of you. Would you like to go up or down it?"
+    << std::endl;
+  std::cin >> answer;
+  if (answer == "up")
+    {
+      std::cout <<
+    "There is an open window. Would you like to jump out of it?" << std::
+    endl;
+    }
+  else
+    (answer == "down");
+  {
+
+    std::cout << "You've found yourself in the dungeon." << std::endl;
+  }
+
+};
+
+
+void doorChoice ()
+{
+  string answer;
+  if (answer == "door one")
+    {
+      std::cout <<
+    "This room doesn't seem to be on fire. You're winning already." << std::endl;
+      rightDoor ();
+    }
+  else {
+      std::cout <<"The fire has swept through this part of the house." << std::endl;
+      leftDoor ();
+    }
+
+
+
+  int main ()
+  {
+
+      newGame();
+
     Player Player1;
     Player1.name;
-    Player1.health = 3;
     Player1.damage = 0;
-    
-  
- 
-    int choice = 0;
-    
-    if (Player1.health == 0)
+
+    if (Player1.damage == 3)
+      {
     std::cout << "Game Over" << std::endl;
-    
-    if (Player1.damage >= 1)
-    std::cout << "Be careful, you have taken one point of damage." << std::endl;
-    
-    std::cout << "Welcome to the game! Before we begin, please give me your name." << endl;
+      }
+
+
+void newGame () {
+    std::cout << "Greetings player. Before you start on your quest tell me your name." << std::endl;
     std::cin >> Player1.name;
-    std::cout << "The game has now begun " << Player1.name << " make each move carefully. You only have three lives." << endl;
-    std::cout << "You wake up in a dark room with a pistol in your hand. You spot two doors in the distance. Which do you enter? 1 or 2?" << std::endl;
-    std::cin >> choice;
-    
-    
-    switch (choice) {
-        case 1: 
-        std::cout << "You pick up a torch and find yourself in a large bedroom with a treasure chest. Do you open the chest?" << std::endl;
-        break;
-        
-        case 2: 
-        std::cout << "You find yourself in darkness for a few minutes before falling down the stairs. Take one point of damage." << std::endl;
-        Player1.damage = 1;
-        Player1.health = 2;
-        break;
+    std::cout << "Are you ready for an adventure " << Player1.name << "?" << std::endl;
+    std::cout << "You awake groggily in room that is filled with flames." << std::endl;
+    std::cout << "Ahead of you are two doors, which do you choose? Door number 1 or door number 2?"
+      << std::endl;
+    cin >> doorChoice ();
+    std::cout << "Game Over" << std::endl;
+};
 
-    };
-    
-    std::cout << "Be careful " << Player1.name << " there are dangerous things ahead." << std::endl;
-    
-
-  return 0;
-}
+    return 0;
+  }
